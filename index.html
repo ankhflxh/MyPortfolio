@@ -19,6 +19,14 @@
     <header>
       <nav>
         <div class="logo">Amarachi Ashley Okeke</div>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Toggle dark mode"
+          aria-pressed="false"
+        >
+          🌙
+        </button>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -57,21 +65,81 @@
       <div class="container">
         <h2>My Skills</h2>
         <div class="skills-grid">
-          <div class="skill-card">
+          <div class="skill-card reveal" data-percent="90">
             <h3>HTML</h3>
-          </div>
-          <div class="skill-card">
-            <h3>CSS</h3>
-          </div>
-          <div class="skill-card">
-            <h3>JavaScript</h3>
+            <div class="skill-meter">
+              <div class="bar"></div>
+            </div>
+            <div class="skill-labels">
+              <span>HTML</span>
+              <span class="skill-percent">0%</span>
+            </div>
           </div>
 
-          <div class="skill-card">
-            <h3>Java</h3>
+          <div class="skill-card reveal" data-percent="85">
+            <h3>CSS</h3>
+            <div class="skill-meter">
+              <div class="bar"></div>
+            </div>
+            <div class="skill-labels">
+              <span>CSS</span>
+              <span class="skill-percent">0%</span>
+            </div>
           </div>
-          <div class="skill-card">
+
+          <div class="skill-card reveal" data-percent="75">
+            <h3>JavaScript</h3>
+            <div class="skill-meter">
+              <div class="bar"></div>
+            </div>
+            <div class="skill-labels">
+              <span>JavaScript</span>
+              <span class="skill-percent">0%</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" data-percent="70">
+            <h3>Java</h3>
+            <div class="skill-meter">
+              <div class="bar"></div>
+            </div>
+            <div class="skill-labels">
+              <span>Java</span>
+              <span class="skill-percent">0%</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" data-percent="80">
             <h3>Python</h3>
+            <div class="skill-meter">
+              <div class="bar"></div>
+            </div>
+            <div class="skill-labels">
+              <span>Python</span>
+              <span class="skill-percent">0%</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" data-percent="70">
+            <h3>R</h3>
+            <div class="skill-meter">
+              <div class="bar"></div>
+            </div>
+            <div class="skill-labels">
+              <span>R</span>
+              <span class="skill-percent">0%</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" data-percent="50">
+            <h3>Power BI</h3>
+            <div class="skill-meter">
+              <div class="bar"></div>
+            </div>
+            <div class="skill-labels">
+              <span>Power BI</span>
+              <span class="skill-percent">0%</span>
+            </div>
           </div>
         </div>
       </div>
@@ -80,30 +148,49 @@
     <section id="projects">
       <div class="container">
         <h2>Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>Project Title</h3>
-            <p>description.</p>
-          </div>
-          <div class="project-card">
-            <h3>Project Title</h3>
-            <p>description.</p>
-          </div>
-          <div class="project-card">
-            <h3>Project Title</h3>
-            <p>description.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="contact">
-      <div class="container">
-        <h2>Get in Touch</h2>
-        <p>Let’s create something extraordinary together!</p>
-        <div class="contact-details">
-          <p><strong>Email:</strong> ashleyjonathan353@gmail.com</p>
-          <p><strong>Phone:</strong> +44 7881170867</p>
+        <div class="projects-grid">
+          <!-- Card 1 -->
+          <a
+            class="project-card link-card"
+            href="https://rpubs.com/ashley71/1342348"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open 'Air Quality in Portsmouth in R' (opens in a new tab)"
+          >
+            <h3>Air Quality in Portsmouth in R</h3>
+            <p>
+              Exploratory analysis & visualisations in R (tidyverse, ggplot2,
+              leaflet).
+            </p>
+            <span class="card-cta">Open ↗</span>
+          </a>
+
+          <!-- Card 2 -->
+          <a
+            class="project-card link-card"
+            href="https://timer-pro-qd9a.onrender.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open 'Project 2' (opens in a new tab)"
+          >
+            <h3>Timer Pro</h3>
+            <p>Glove-friendly, offline-first race timer for events. Start/pause, capture finisher IDs, auto-rank with medals, and share live results to spectators. Powered by vanilla JS, Express, and SQLite.</p>
+            <span class="card-cta">Open ↗</span>
+          </a>
+
+          <!-- Card 3 -->
+          <a
+            class="project-card link-card"
+            href="https://example.com/demo"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open 'Project 3' (opens in a new tab)"
+          >
+            <h3>Project 3 Title</h3>
+            <p>Short description or tagline for the project.</p>
+            <span class="card-cta">Open ↗</span>
+          </a>
         </div>
       </div>
     </section>
@@ -111,5 +198,6 @@
     <footer>
       <p>&copy; 2024 Ashley Okeke. Designed with ❤️ and dedication.</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
