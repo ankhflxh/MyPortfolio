@@ -3,205 +3,239 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Ashley Okeke | Portfolio" />
+    <meta name="author" content="Amarachi Ashley Okeke" />
     <meta
       name="description"
-      content="Ashley Okeke's Portfolio showcasing skills, projects, and achievements."
+      content="Amarachi Ashley Okeke — final-year Software Engineering student at the University of Portsmouth. Full-stack web apps, network automation and infrastructure."
     />
-    <title>Amarachi Ashley Okeke | Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="theme-color" content="#0d0a1a" />
+    <title>Amarachi Ashley Okeke | Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="logo">Amarachi Ashley Okeke</div>
-        <button
-          id="theme-toggle"
-          class="theme-toggle"
-          aria-label="Toggle dark mode"
-          aria-pressed="false"
-        >
-          🌙
-        </button>
+    <div class="crt" aria-hidden="true"></div>
+
+    <header class="nav">
+      <a href="#top" class="logo" aria-label="Back to top">AO<span class="cursor">_</span></a>
+      <nav aria-label="Main">
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about"><span class="idx">01</span>about</a></li>
+          <li><a href="#experience"><span class="idx">02</span>experience</a></li>
+          <li><a href="#projects"><span class="idx">03</span>projects</a></li>
+          <li><a href="#skills"><span class="idx">04</span>stack</a></li>
+          <li><a href="#contact"><span class="idx">05</span>contact</a></li>
         </ul>
       </nav>
-      <div class="hero-section">
-        <h1>
-          Hello, <br />
-          I'm <span>Amarachi Ashley Okeke</span>
-        </h1>
-        <p>
-          A <span>Software Engineer</span> crafting elegant solutions for modern
-          problems.
-        </p>
-        <a href="#contact" class="btn">Let’s Connect</a>
-      </div>
     </header>
 
-    <section id="about">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>
-          Enthusiastic undergraduate Software Engineer seeking an industrial
-          Software Engineering placement. Familiar with languages like Python
-          and Java with a passion for problem-solving and collaboration, eager
-          to apply my knowledge to contribute to innovative project. Determined
-          about continuous learning and emerging technologies, I aim to make a
-          meaningful impact in the field.
-        </p>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="container">
-        <h2>My Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-card reveal" data-percent="90">
-            <h3>HTML</h3>
-            <div class="skill-meter">
-              <div class="bar"></div>
-            </div>
-            <div class="skill-labels">
-              <span>HTML</span>
-              <span class="skill-percent">0%</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal" data-percent="85">
-            <h3>CSS</h3>
-            <div class="skill-meter">
-              <div class="bar"></div>
-            </div>
-            <div class="skill-labels">
-              <span>CSS</span>
-              <span class="skill-percent">0%</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal" data-percent="75">
-            <h3>JavaScript</h3>
-            <div class="skill-meter">
-              <div class="bar"></div>
-            </div>
-            <div class="skill-labels">
-              <span>JavaScript</span>
-              <span class="skill-percent">0%</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal" data-percent="70">
-            <h3>Java</h3>
-            <div class="skill-meter">
-              <div class="bar"></div>
-            </div>
-            <div class="skill-labels">
-              <span>Java</span>
-              <span class="skill-percent">0%</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal" data-percent="80">
-            <h3>Python</h3>
-            <div class="skill-meter">
-              <div class="bar"></div>
-            </div>
-            <div class="skill-labels">
-              <span>Python</span>
-              <span class="skill-percent">0%</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal" data-percent="70">
-            <h3>R</h3>
-            <div class="skill-meter">
-              <div class="bar"></div>
-            </div>
-            <div class="skill-labels">
-              <span>R</span>
-              <span class="skill-percent">0%</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal" data-percent="50">
-            <h3>Power BI</h3>
-            <div class="skill-meter">
-              <div class="bar"></div>
-            </div>
-            <div class="skill-labels">
-              <span>Power BI</span>
-              <span class="skill-percent">0%</span>
-            </div>
+    <main id="top">
+      <!-- ============ HERO ============ -->
+      <section class="hero">
+        <canvas id="voxel" aria-hidden="true"></canvas>
+        <div class="hero-copy">
+          <p class="boot" id="boot" aria-hidden="true"></p>
+          <h1 class="name">
+            <span class="line">Amarachi</span>
+            <span class="line">Ashley Okeke</span>
+          </h1>
+          <p class="role">
+            Software Engineer <span class="sep">//</span> full-stack web apps
+            <span class="sep">//</span> network automation
+          </p>
+          <p class="status"><span class="dot"></span> Open to 2027 graduate roles</p>
+          <div class="ctas">
+            <a href="#projects" class="btn btn-primary">&gt; view_projects</a>
+            <a href="#contact" class="btn btn-ghost">&gt; get_in_touch</a>
           </div>
         </div>
-      </div>
-    </section>
+        <p class="scroll-hint" aria-hidden="true">scroll &darr;</p>
+      </section>
 
-    <section id="projects">
-      <div class="container">
-        <h2>Projects</h2>
-
-        <div class="projects-grid">
-          <!-- Card 1 -->
-          <a
-            class="project-card link-card"
-            href="https://rpubs.com/ashley71/1342348"
-            target="_blank"
-            rel="noopener"
-            aria-label="Open 'Air Quality in Portsmouth in R' (opens in a new tab)"
-          >
-            <h3>Air Quality in Portsmouth in R</h3>
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="section">
+        <h2 class="section-title"><span class="idx">01</span> about</h2>
+        <div class="about-grid">
+          <div class="about-text">
             <p>
-              Exploratory analysis & visualisations in R (tidyverse, ggplot2,
-              leaflet).
+              I'm a final-year <strong>BSc Software Engineering</strong> student at the
+              University of Portsmouth (predicted First, graduating July 2027).
             </p>
-            <span class="card-cta">Open ↗</span>
-          </a>
-
-          <!-- Card 2 -->
-          <a
-            class="project-card link-card"
-            href="https://timer-pro-xqg2.onrender.com"
-            target="_blank"
-            rel="noopener"
-            aria-label="Open 'Project 2' (opens in a new tab)"
-          >
-            <h3>Timer Pro</h3>
             <p>
-              Glove-friendly, offline-first race timer for events. Start/pause,
-              capture finisher IDs, auto-rank with medals, and share live
-              results to spectators. Powered by vanilla JS, Express, and SQLite.
+              I spent my placement year on the university's <strong>Computer Networks</strong>
+              team, working on live campus infrastructure: leading Cisco firmware upgrades,
+              writing automation scripts in SolarWinds and helping migrate buildings from
+              Layer 2 to Layer 3 without downtime.
             </p>
-            <span class="card-cta">Open ↗</span>
-          </a>
-
-          <!-- Card 3 -->
-          <a
-            class="project-card link-card"
-            href="https://example.com/demo"
-            target="_blank"
-            rel="noopener"
-            aria-label="Open 'Project 3' (opens in a new tab)"
-          >
-            <h3>Project 3 Title</h3>
-            <p>Short description or tagline for the project.</p>
-            <span class="card-cta">Open ↗</span>
-          </a>
+            <p>
+              Before that I was a backend intern at a payments company in Lagos. Today I build
+              full-stack web apps with Node.js, Express and PostgreSQL, and I enjoy work that
+              sits between code and infrastructure.
+            </p>
+          </div>
+          <ul class="stats">
+            <li class="stat"><span class="stat-num">1yr</span><span class="stat-label">networks placement</span></li>
+            <li class="stat"><span class="stat-num">8+</span><span class="stat-label">campus sites upgraded</span></li>
+            <li class="stat"><span class="stat-num">10+</span><span class="stat-label">fixes shipped a week as an intern</span></li>
+            <li class="stat"><span class="stat-num">1st</span><span class="stat-label">predicted degree</span></li>
+          </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer>
-      <p>&copy; 2024 Ashley Okeke. Designed with ❤️ and dedication.</p>
+      <!-- ============ EXPERIENCE ============ -->
+      <section id="experience" class="section">
+        <h2 class="section-title"><span class="idx">02</span> experience</h2>
+        <ol class="timeline">
+          <li class="job">
+            <div class="job-head">
+              <h3>Computer Networks Placement Student</h3>
+              <span class="job-meta">University of Portsmouth &middot; 2025&ndash;2026</span>
+            </div>
+            <ul>
+              <li>Led firmware upgrades across Cisco Catalyst 9200/9300 switch fleets using SolarWinds NCM, fixing TFTP transfer failures and flash storage limits.</li>
+              <li>Wrote SolarWinds scripts to clear recurring error logs and remove Telnet from network switches.</li>
+              <li>Supported live Layer 2 &rarr; Layer 3 migrations across campus buildings, including finding a crossed-fibre fault during an outage.</li>
+              <li>Built and installed Cisco switch stacks across 8+ sites; raised and delivered a change request for an overheating risk.</li>
+            </ul>
+          </li>
+          <li class="job">
+            <div class="job-head">
+              <h3>Software Engineering Backend Intern</h3>
+              <span class="job-meta">Hotbox Technology, Lagos &middot; 2023&ndash;2024</span>
+            </div>
+            <ul>
+              <li>Maintained backend services handling hundreds of daily payment transactions.</li>
+              <li>Tested and deployed fixes for 10+ client-reported issues a week.</li>
+              <li>Supported POS merchants and enterprise clients with integration and transaction issues.</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section id="projects" class="section">
+        <h2 class="section-title"><span class="idx">03</span> projects</h2>
+        <div class="projects">
+          <article class="project featured">
+            <div class="project-icon" data-icon="calendar" aria-hidden="true"></div>
+            <div class="project-body">
+              <p class="project-kicker">final-year project &middot; in progress</p>
+              <h3>ScheduleMate Pro</h3>
+              <p>
+                A mobile-first group scheduling web app. Groups create meetings, RSVP
+                (in person / online / can't go) and see a live attendance board. It sends
+                push and email reminders, generates iCal invites and opens video rooms.
+              </p>
+              <ul class="tags">
+                <li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Vanilla JS</li><li>Resend</li><li>Daily.co</li><li>Render</li>
+              </ul>
+            </div>
+          </article>
+
+          <a class="project" href="https://timer-pro-xqg2.onrender.com" target="_blank" rel="noopener">
+            <div class="project-icon" data-icon="stopwatch" aria-hidden="true"></div>
+            <div class="project-body">
+              <p class="project-kicker">live demo &nearr;</p>
+              <h3>Timer Pro</h3>
+              <p>
+                A glove-friendly, offline-first race timer for events. It captures finisher
+                IDs, ranks runners automatically with medals and shares live results with
+                spectators.
+              </p>
+              <ul class="tags"><li>Vanilla JS</li><li>Express</li><li>SQLite</li><li>Offline-first</li></ul>
+            </div>
+          </a>
+
+          <a class="project" href="https://rpubs.com/ashley71/1342348" target="_blank" rel="noopener">
+            <div class="project-icon" data-icon="leaf" aria-hidden="true"></div>
+            <div class="project-body">
+              <p class="project-kicker">analysis &nearr;</p>
+              <h3>Air Quality in Portsmouth</h3>
+              <p>
+                Exploratory data analysis of Portsmouth air-quality readings, with charts and
+                an interactive map.
+              </p>
+              <ul class="tags"><li>R</li><li>tidyverse</li><li>ggplot2</li><li>leaflet</li></ul>
+            </div>
+          </a>
+
+          <article class="project">
+            <div class="project-icon" data-icon="switch" aria-hidden="true"></div>
+            <div class="project-body">
+              <p class="project-kicker">placement &middot; internal</p>
+              <h3>Network Automation</h3>
+              <p>
+                SolarWinds scripts that cleaned up recurring error logs and removed Telnet
+                from campus switches, plus a PoE automation to power-cycle card-reader ports
+                remotely.
+              </p>
+              <ul class="tags"><li>SolarWinds NCM</li><li>Cisco IOS-XE</li><li>Scripting</li></ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ SKILLS ============ -->
+      <section id="skills" class="section">
+        <h2 class="section-title"><span class="idx">04</span> stack</h2>
+        <div class="stack">
+          <div class="stack-group">
+            <h3>languages</h3>
+            <ul class="chips"><li>JavaScript</li><li>Python</li><li>Java</li><li>SQL</li><li>R</li><li>HTML / CSS</li></ul>
+          </div>
+          <div class="stack-group">
+            <h3>web &amp; backend</h3>
+            <ul class="chips"><li>Node.js</li><li>Express</li><li>REST APIs</li><li>React Native / Expo</li></ul>
+          </div>
+          <div class="stack-group">
+            <h3>data</h3>
+            <ul class="chips"><li>PostgreSQL</li><li>MySQL</li><li>SQLite</li><li>Power BI</li></ul>
+          </div>
+          <div class="stack-group">
+            <h3>infrastructure</h3>
+            <ul class="chips"><li>Cisco Catalyst 9200/9300</li><li>SolarWinds NCM</li><li>TCP/IP</li><li>Render</li></ul>
+          </div>
+          <div class="stack-group">
+            <h3>tools</h3>
+            <ul class="chips"><li>Git &amp; GitHub</li><li>Figma</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" class="section">
+        <h2 class="section-title"><span class="idx">05</span> contact</h2>
+        <div class="terminal" role="group" aria-label="Contact details">
+          <div class="term-bar"><span></span><span></span><span></span><p>~/contact</p></div>
+          <div class="term-body">
+            <p><span class="prompt">$</span> whoami</p>
+            <p class="out">Amarachi Ashley Okeke &mdash; Software Engineer, Portsmouth UK</p>
+            <p><span class="prompt">$</span> contact --list</p>
+            <p class="out">email&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:ashleyjonathan353@gmail.com">ashleyjonathan353@gmail.com</a></p>
+            <p class="out">linkedin&nbsp;<a href="https://www.linkedin.com/in/amarachi-okeke-a77597233" target="_blank" rel="noopener">in/amarachi-okeke</a></p>
+            <p class="out">github&nbsp;&nbsp;&nbsp;<a href="https://github.com/ankhflxh" target="_blank" rel="noopener">github.com/ankhflxh</a></p>
+            <p><span class="prompt">$</span> <span class="cursor">_</span></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Amarachi Ashley Okeke &middot; built with vanilla JS + three.js</p>
     </footer>
-    <script src="script.js"></script>
+
+    <script type="module" src="script.js"></script>
   </body>
 </html>
